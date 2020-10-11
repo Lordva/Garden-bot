@@ -55,8 +55,8 @@ exports.run = async (client, message) => {
                const rconMember = async () => {
                    console.log("your here");
                    await rcon.connect() // Doesn't wanna connect 
-                   console.log(`we are talking of ${VisiteurName[i]}`)
-                   await rcon.run(`lp user ${VisiteurName[i]} parent set membre`);
+                   console.log(`we are talking of ${VisiteurName}`)
+                   await rcon.run(`lp user ${VisiteurName} parent set membre`);
                    return rcon.close();
                };
                rconMember();
