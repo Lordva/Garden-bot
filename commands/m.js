@@ -22,7 +22,9 @@ exports.run = async (client, message) => {
     if (!message.member.hasPermission('MANAGE_ROLES')) return Embed1(`:no_entry: Erreur : permissions`, `Vous n'avez pas les permissions pour faire cela.`);
 
     Visiteur = message.mentions.members.map(m=>m.user.id);
-    console.log(Visiteur);
+    VisiteurName = message.mentions.members.map(m=>m.user.username);
+
+    console.log(`here is the person your talking about : ${VisiteurName}`);
 
     if (Visiteur.length === 0) return Embed1(`:x: Erreur`, `Aucun membre à ajouter trouvé. \n Syntaxe : ` + "`" + prefix + "m <nom1> <nom2> <nom3>..`)"); //Pas de mention
 
@@ -53,8 +55,8 @@ exports.run = async (client, message) => {
                const rconMember = async () => {
                    console.log("your here");
                    await rcon.connect() // Doesn't wanna connect 
-                   console.log(`we are talking of ${Visiteur[i]}`)
-                   await rcon.run(`lp user ${Visiteur[i]} parent set membre`);
+                   console.log(`we are talking of ${VisiteurName[i]}`)
+                   await rcon.run(`lp user ${VisiteurName[i]} parent set membre`);
                    return rcon.close();
                };
                rconMember();
