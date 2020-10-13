@@ -1,0 +1,56 @@
+{
+    "prefix": "!",
+    "prefix2": "?",
+    "GardenBot_id": "",
+    
+    "site": "",
+
+    "ip_survival": "",
+    "version_survival": "",
+    "seed_survival": "",
+
+    "ip_snapshot": "",
+    "version_snapshot": "",
+
+    "ip_creative": "",
+    "version_creative": "",
+    
+    "ip_event": "",
+    "version_event": "",
+
+    "ip_skyblock": "",
+    "version_skyblock": "",
+
+    "ip_roleplay": "",
+    "version_roleplay": "",
+
+    "id_DiscordGarden": "",
+    "id_DiscordBackground": "",
+
+    "id_NotifSondages": "",
+
+    "id_Fondateur": "",
+    "id_Administrateur": "",
+    "id_Staff": "",
+    "id_Moderateur": "",
+    "id_Helper": "",
+    "id_Animateur": "",
+    "id_RespBuilder": "",
+    "id_Builder": "",
+    "id_staff": "",
+    "id_AnimateurTest": "",
+
+    "id_Membre": "",
+    "id_Visiteur": "",
+    "id_Bot": "",
+    "id_BlindTest": "",
+
+    "id_random": "",
+    
+    "id_Team": "",
+    "id_TeamCategory": "",
+
+    "id_ArchivesCategory": "",
+
+    "rconPass": ""
+}
