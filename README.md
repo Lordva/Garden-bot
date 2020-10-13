@@ -1,11 +1,11 @@
 # Gardenmc.fr Discord bot
 
-This bot is the official discord bot for [Gardenmc.fr](https://gardenmc.fr) I am not the author, I don't know who is but I''m the one maintaining it.
+This bot is the official discord bot for [Gardenmc.fr](https://gardenmc.fr) **I am not the author Raiful is.** Unfortunatly I don't now any other way to credit him. I'm the one maintaining it.
 
 
 ## Features
-- server IP
-- Version du serveur
+- server IP (Dynamic)
+- Version du serveur (dynamic)
 - Lien du site
 - Lien vers la page de vote
 - Liste du staff
