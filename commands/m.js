@@ -1,8 +1,8 @@
 const Discord = require('discord.js'); // We need this to form & send embeds.
-const { id_DiscordGarden, prefix, id_Visiteur, id_Membre, id_Staff, rconPass} = require('../config.json');
+const { id_DiscordGarden, prefix, id_Visiteur, id_Membre, id_Staff, rconPass, rconIp, rconPort } = require('../config.json');
 
 const utils = require('minecraft-server-util');
-const rcon = new utils.RCON('127.0.0.1', { port: 25576, password: rconPass });
+const rcon = new utils.RCON(rconIp, { port: rconPort, password: rconPass });
 
 rcon.on('output', (message) => console.log(message));
 // Command Handler
@@ -53,7 +53,6 @@ exports.run = async (client, message) => {
                 //console.log(`${Visiteur[i]} ajouté à ${NomTeam}.`)
 
                const rconMember = async () => {
-                   console.log("your here");
                    await rcon.connect() // Doesn't wanna connect 
                    console.log(`we are talking of ${VisiteurName}`)
                    await rcon.run(`lp user ${VisiteurName} parent set membre`);

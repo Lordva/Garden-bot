@@ -52,5 +52,7 @@
 
     "id_ArchivesCategory": "",
 
-    "rconPass": ""
+    "rconPass": "",
+    "rconIp": "",
+    "rconPort": ""
 }
