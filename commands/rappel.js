@@ -39,34 +39,20 @@ dot + "`" + prefix + "rappel <temps en minutes> <message>` **:** Créer un rappe
         var timeToRemind = waitingTimeToMs(timeInMinute)
         setTimeout(function () {
             msg.channel.send('Hey, ' + msg.author)
-            Embed1("rappel: votre message", messageToSay)
+            Embed1("Tu as un rappel:", messageToSay)
         }, timeToRemind)
     }
 
-    // function remind(msg, messageToSay) {
-    //     msg.channel.send('Hey, ' + msg.author)
-    //     msg.channel.send({
-    //         Embed: {
-    //             author: {
-    //                 name: msg.author.username,
-    //                 icon_url: msg.author.avatarURL
-    //             },
-    //             color: 9384170,
-    //             title: 'Rappel: votre message',
-    //             Description: '**' + messageToSay + '**',
-    //             timestamp: new Date()
-    //         }
-    //     )}
-    // }
-
     function waitingTimeToMs(timeOut) {
-        console.log(timeOut)
-        if (Number.isInteger(timeOut)){
-            console.log("now were here")
-            var m = Math.floor(timeOut * 60000)
-            return m
-        }else{
-            return Help
-        }
+
+        var m = Math.floor(timeOut * 1000 * 60)
+        return m
+        // if (Number.isInteger(timeOut)){
+        //     console.log("now were here")
+        //     var m = Math.floor(timeOut * 1000 * 60)
+        //     return m
+        // }else{
+        //     return Help
+        // }
     }
 }
