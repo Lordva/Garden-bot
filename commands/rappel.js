@@ -29,16 +29,12 @@ dot + "`" + prefix + "rappel <temps en minutes> <message>` **:** Créer un rappe
     message.react('☑');
     var timeOut = args[0];
     console.log('time : ' + timeOut + "min");
-    messageToSay = args[1];
+    args.shift();
+    messageToSay = args.toString();
+    messageToSay = messageToSay.replace(/,/gi, ' ');
     CreateReminder(message, timeOut, messageToSay)
-    // for (var n; n <= args.lenght; n++){
-    //     if (n != 1){
-    //         var messageToSay = messageToSay + args[n]
-    //     }
-    // }
-    
-    console.log(messageToSay);
 
+    
     function CreateReminder(msg, timeInMinute, messageToSay){
         var timeToRemind = waitingTimeToMs(timeInMinute)
         setTimeout(function () {
