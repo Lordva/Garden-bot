@@ -24,6 +24,7 @@ exports.run = async (client, message, args) => {
 
 			"`"	+ prefix + "poll` **:** Faire un sondage \n"+
 			"`"	+ prefix + "team` **:** Gestion des teams \n" +
+			"`"	+ prefix + "rappel` **:** Créer un rappel \n" +
 			"`" + prefix + "help` **:** Cette commande, duh.")
 			
 			.setFooter('');
