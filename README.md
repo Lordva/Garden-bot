@@ -13,6 +13,7 @@ This bot is the official discord bot for [Gardenmc.fr](https://gardenmc.fr) **I 
 - Sondage + notif rôle sondages (admin only)
 - Ping
 - Clear, effacer les messages (nécessite la permission de 'Gérer les messages')
+- Reminder command
 
 ## Installation
 
