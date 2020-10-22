@@ -10,9 +10,8 @@ exports.run = async (client, message) => {
         const serverVersion = responce.version
     }).catch( (e) => {
         console.error(`[ERROR] Could not connect to RCON on ${rconIp}:${rconPort} : ` + e)
-    }).finally( () => {
-        message.channel.send(`**IP :** ${ip_survival} \n **Version :** ${serverVersion} \n Il y a ${onlineplayers} joueurs en ligne`)
     });
+    message.channel.send(`**IP :** ${ip_survival} \n **Version :** ${serverVersion} \n Il y a ${onlineplayers} joueurs en ligne`)
         
     
     
