@@ -2,9 +2,9 @@ const Discord = require('discord.js'); // We need this to form & send embeds.
 const { id_DiscordGarden, prefix, id_Visiteur, id_Membre, id_Staff, rconPass, rconIp, rconPort } = require('../config.json');
 
 const utils = require('minecraft-server-util');
-const rcon = new utils.RCON(rconIp, { port: rconPort, password: rconPass });
+// const rcon = new utils.RCON(rconIp, { port: rconPort, password: rconPass });
 
-rcon.on('output', (message) => console.log(message));
+// rcon.on('output', (message) => console.log(message));
 // Command Handler
 exports.run = async (client, message) => {
 
@@ -52,13 +52,13 @@ exports.run = async (client, message) => {
                 NouveauMembre.push(` <@${Visiteur[i]}>`)
                 //console.log(`${Visiteur[i]} ajouté à ${NomTeam}.`)
 
-               const rconMember = async () => {
-                   await rcon.connect() // Doesn't wanna connect 
-                   console.log(`we are talking of ${VisiteurName}`)
-                   await rcon.run(`lp user ${VisiteurName} parent set membre`);
-                   return rcon.close();
-               };
-               rconMember();
+            //    const rconMember = async () => {
+            //        await rcon.connect() // Doesn't wanna connect 
+            //        console.log(`we are talking of ${VisiteurName}`)
+            //        await rcon.run(`lp user ${VisiteurName} parent set membre`);
+            //        return rcon.close();
+            //    };
+            //    rconMember();
             }
         }
 
