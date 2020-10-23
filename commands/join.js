@@ -19,13 +19,20 @@ exports.run = async (client, message, args) => {
     if (args.length == 0) {
         member = message.member;
     } else {
-        console.log("Error argument was given")
-        return
+        if(!message.mentions.members.first()){
+            return message.channel.send("Vous ne pouvez pas encore avoir cette information sans mentionner la personne")
+        } else {
+            member = message.mentions.members.first();
+        }
+    }
+
+    if (!member){
+        return message.channel.send("Utilisateur invalide");
     }
     
     const joinedServer = FormatDate(member.joinedAt).toLowerCase()
     const timeAgo = daysAgo(new Date(member.joinedAt))
 
-    message.channel.send(`Vous avez rejoin le serveur le **${joinedServer}** - il y a **${timeAgo}** jours`)
+    message.channel.send(`${member.displayName} a rejoin le serveur le **${joinedServer}** - il y a **${timeAgo}** jours`)
 
 }
