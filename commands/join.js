@@ -1,4 +1,4 @@
-
+const { GuildMember, Message } = require('discord.js');
 
 function daysAgo(date){
     const ms = Math.floor(new Date() - date);
@@ -11,6 +11,28 @@ function FormatDate(date){
     return new Intl.DateTimeFormat("fr-FR", options).format(date).toLowerCase().split(",").join("");
 }
 
+function getMember(message, memberName) {
+    if (!message.guild) return null
+    let target = message.guild.members.find(member => {
+        if (member.user.tag.slice(0, -5).toLowerCase() == memberName.toLowerCase()) {
+            return member;
+        }
+    });
+
+    if (!target) {
+        target = message.guild.members.cache.find(member => {
+            return member.displayName.toLowerCase().includes(memberName.toLowerCase()) || member.user.tag.toLowerCase().includes(memberName.toLowerCase());
+        });
+    }
+
+    if (!target) {
+        target = message.guild.members.cache.find(member => {
+            return member.user.id == memberName;
+        });
+    }
+
+    return target;
+}
 
 exports.run = async (client, message, args) => {
 
@@ -20,7 +42,11 @@ exports.run = async (client, message, args) => {
         member = message.member;
     } else {
         if(!message.mentions.members.first()){
-            return message.channel.send("Vous ne pouvez pas encore avoir cette information sans mentionner la personne")
+            try{
+                member = getMember(message, args[0]);
+            } catch(e){
+                console.log(`Une erreur c'est produite : ${e}`)
+            }
         } else {
             member = message.mentions.members.first();
         }
