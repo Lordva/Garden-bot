@@ -1,4 +1,5 @@
-const { GuildMember, Message } = require('discord.js');
+const { GuildMember, Message, RichEmbed, displayAvatarURL } = require('discord.js');
+
 
 function daysAgo(date){
     const ms = Math.floor(new Date() - date);
@@ -20,18 +21,27 @@ function getMember(message, memberName) {
     });
 
     if (!target) {
-        target = message.guild.members.cache.find(member => {
+        target = message.guild.members.find(member => {
             return member.displayName.toLowerCase().includes(memberName.toLowerCase()) || member.user.tag.toLowerCase().includes(memberName.toLowerCase());
         });
     }
 
     if (!target) {
-        target = message.guild.members.cache.find(member => {
+        target = message.guild.members.find(member => {
             return member.user.id == memberName;
         });
     }
 
     return target;
+}
+
+function Embed1(Title, Description, icon) {
+    var Embed = new RichEmbed()
+        .setColor('#007f47')
+        .setTitle(Title)
+        .setDescription(Description)
+        .setThumbnail(icon)
+    return Embed
 }
 
 exports.run = async (client, message, args) => {
@@ -59,6 +69,6 @@ exports.run = async (client, message, args) => {
     const joinedServer = FormatDate(member.joinedAt).toLowerCase()
     const timeAgo = daysAgo(new Date(member.joinedAt))
 
-    message.channel.send(`${member.displayName} a rejoin le serveur le **${joinedServer}** - il y a **${timeAgo}** jours`)
-
+    // message.channel.send(`${member.displayName} a rejoint le serveur le **${joinedServer}** - il y a **${timeAgo}** jours`)
+    message.channel.send(Embed1(member.user.tag, `a rejoint le serveur le **${joinedServer}** - il y a **${timeAgo}** jours`, member.user.avatarURL))
 }

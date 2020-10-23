@@ -21,6 +21,7 @@ exports.run = async (client, message, args) => {
 			"`"	+ prefix + "wiki` **:** Wiki de Garden\n" +
 			"`"	+ prefix + "twitter` **:** Twitter de Garden \n"  +
 			"`" + prefix + "staff` **:** La liste du staff \n\n" +
+			"`" + prefix + "join <name>` **:** Date a laquelle le joueur a rejoint le discord\n" +
 
 			"`"	+ prefix + "poll` **:** Faire un sondage \n"+
 			"`"	+ prefix + "team` **:** Gestion des teams \n" +
