@@ -1,6 +1,6 @@
 # Gardenmc.fr Discord bot
 
-This bot is the official discord bot for [Gardenmc.fr](https://gardenmc.fr) **I am not the author Raiful is.** Unfortunatly I don't now any other way to credit him. I'm the one maintaining it.
+This bot is the official discord bot for [Gardenmc.fr](https://gardenmc.fr) **I am not the author Raidful is.** Unfortunatly I don't know any other way to credit him. I'm the one maintaining it.
 
 
 ## Features
